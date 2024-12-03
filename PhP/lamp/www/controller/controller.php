@@ -229,4 +229,19 @@ function executeUnitTests()
 {
     require 'unittests.php';
 }
+
+function deleteTeam($teamId)
+{
+    if ($teamId == null) {
+        $message = "Aucune équipe sélectionnée pour la suppression.";
+        require_once 'view/error.php';
+    } else {
+        if (VolscoreDB::deleteTeam($teamId)) {
+            $message = "L'équipe a été supprimée avec succès.";
+        } else {
+            $message = "Erreur lors de la suppression de l'équipe.";
+        }
+        header('Location: ?action=teams'); // Redirige vers la liste des équipes
+    }
+}
 ?>
