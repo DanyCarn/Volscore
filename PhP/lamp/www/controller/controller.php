@@ -229,4 +229,10 @@ function executeUnitTests()
 {
     require 'unittests.php';
 }
+
+function deleteteam($teamid)
+{
+    VolscoreDB::deleteTeam($teamid);
+    header('Location: ?action=teams');
+}
 ?>

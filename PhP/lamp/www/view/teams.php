@@ -10,7 +10,7 @@ ob_start();
 <?php
 foreach ($teams as $team)
 {
-    echo "<li>".$team->name."</li>";
+    echo "<li>".$team->name."<a href='?action=deleteTeam&teamid=".$team->id."' class='btn')'><img src='../images/delete.png' width='20'></a> </li>";
 }
 ?>
 </ul>
