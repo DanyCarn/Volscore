@@ -5,55 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter une Nouvelle Équipe</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-            gap: 15px;
-        }
-        label {
-            font-weight: bold;
-        }
-        input, button {
-            padding: 10px;
-            font-size: 1rem;
-        }
-        button {
-            cursor: pointer;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .back-button {
-            margin-top: 15px;
-            display: inline-block;
-        }
-        .back-button a {
-            text-decoration: none;
-            padding: 10px 20px;
-            background-color: #6c757d;
-            color: white;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        .back-button a:hover {
-            background-color: #5a6268;
-        }
+        /* Ton code CSS ici */
     </style>
 </head>
 <body>
 
 <h1>Ajouter une Nouvelle Équipe</h1>
 
-<form action="index.php?action=save_team" method="post">
+<?php
+// Si une équipe a été ajoutée avec succès, afficher un message de confirmation
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($stmt)) {
+    echo "<p>Équipe ajoutée avec succès !</p>";
+}
+?>
+
+<!-- Formulaire d'ajout -->
+<form action="add_team.php" method="post">
     <label for="team_name">Nom de l'Équipe :</label>
     <input type="text" id="team_name" name="team_name" required>
 
