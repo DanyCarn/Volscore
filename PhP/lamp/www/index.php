@@ -57,6 +57,28 @@ switch ($action)
     case 'unittests':
         executeUnitTests();
         break;
+        // Action pour enregistrer une nouvelle équipe
+    case 'save_team':
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Sanitize inputs to prevent SQL injection
+            $team_name = htmlspecialchars($_POST['team_name']) ?? '';
+            $city_name = htmlspecialchars($_POST['city_name']) ?? '';
+            $abbreviation = htmlspecialchars($_POST['abbreviation']) ?? '';
+
+            // Vérifier si tous les champs sont remplis
+            if (!empty($team_name) && !empty($city_name) && !empty($abbreviation)) {
+                // Appel de la méthode pour ajouter l'équipe
+                VolscoreDB::saveTeam($team_name, $city_name, $abbreviation);
+                // Redirection vers la page de la liste des équipes
+                header('Location: index.php?action=teams');
+                exit;  // Arrêter l'exécution après la redirection
+            } else {
+                // Afficher un message d'erreur si un champ est manquant
+                $message = "Tous les champs sont requis !";
+                require_once 'view/error.php';
+            }
+        }
+        break;
     default:
         require_once 'view/home.php';
 }
