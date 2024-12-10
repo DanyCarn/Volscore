@@ -57,6 +57,9 @@ switch ($action)
     case 'unittests':
         executeUnitTests();
         break;
+    case 'deleteTeam':
+        deleteteam($_GET['teamid']);
+        break;
     default:
         require_once 'view/home.php';
 }
