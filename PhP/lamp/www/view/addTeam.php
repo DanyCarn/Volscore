@@ -20,37 +20,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($stmt)) {
 ?>
 
 <!-- Formulaire d'ajout -->
-<form action="add_team.php" method="post">
+<form action="addTeams.php" method="post">
     <label for="team_name">Nom de l'Équipe :</label>
     <input type="text" id="team_name" name="team_name" required>
-
+<br>
+<br>
     <label for="city_name">Nom de la Ville :</label>
     <input type="text" id="city_name" name="city_name" required>
-
+<br>
+<br>
     <label for="abbreviation">Abréviation :</label>
     <input type="text" id="abbreviation" name="abbreviation" required maxlength="5">
-
+<br>
+<br>
     <button type="submit">Ajouter</button>
+    <br>
+    <br>
 </form>
 
 <!-- Bouton de retour -->
 <div class="back-button">
     <a href="index.php?action=teams">Retour à la Liste des Équipes</a>
 </div>
-
-<script>
-    // Vérification côté client avant l'envoi du formulaire
-    document.querySelector('form').addEventListener('submit', function (e) {
-        const teamName = document.getElementById('team_name').value.trim();
-        const cityName = document.getElementById('city_name').value.trim();
-        const abbreviation = document.getElementById('abbreviation').value.trim();
-
-        if (!teamName || !cityName || !abbreviation) {
-            e.preventDefault();
-            alert('Tous les champs sont requis.');
-        }
-    });
-</script>
 
 </body>
 </html>

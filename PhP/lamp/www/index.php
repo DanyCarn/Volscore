@@ -80,6 +80,6 @@ switch ($action)
         }
         break;
     default:
-        require_once 'view/home.php';
+        require_once 'view/addTeam.php';
 }
 ?>
