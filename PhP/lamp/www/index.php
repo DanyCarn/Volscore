@@ -57,6 +57,9 @@ switch ($action)
     case 'unittests':
         executeUnitTests();
         break;
+    case 'newTeam':
+        addTeam();
+        break;
         // Action pour enregistrer une nouvelle équipe
     case 'save_team':
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -80,6 +83,6 @@ switch ($action)
         deleteteam($_GET['teamid']);
         break;
     default:
-        require_once 'view/addTeam.php';
+        require_once 'view/home.php';
 }
 ?>

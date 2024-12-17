@@ -235,4 +235,8 @@ function deleteteam($teamid)
     VolscoreDB::deleteTeam($teamid);
     header('Location: ?action=teams');
 }
+
+function addTeam(){
+    require_once 'view/addTeam.php';
+}
 ?>

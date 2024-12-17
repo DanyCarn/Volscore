@@ -31,7 +31,7 @@ foreach ($teams as $team)
 }
 ?>
  <!-- Bouton "Ajouter une Équipe" en bas du cadre -->
- <a href="?action=addTeam.php">
+ <a href="?action=newTeam">
         <button style="
             padding: 12px 24px; 
             background-color: #007bff; 
