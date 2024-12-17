@@ -78,6 +78,8 @@ switch ($action)
                 require_once 'view/error.php';
             }
         }
+    case 'deleteTeam':
+        deleteteam($_GET['teamid']);
         break;
     default:
         require_once 'view/addTeam.php';

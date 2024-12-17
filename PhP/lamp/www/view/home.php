@@ -21,6 +21,14 @@ ob_start(); // Démarre la mise en mémoire tampon
         </a>
     </div>
 </div>
+<div class="row mt-4">
+    <div class="col-6">
+        <a href="register.php" class="btn btn-primary btn-lg">Créer un compte</a>
+    </div>
+    <div class="col-6">
+        <a href="login.php" class="btn btn-secondary btn-lg">Se connecter</a>
+    </div>
+</div>
 <?php
 $content = ob_get_clean(); // Récupère le contenu mis en mémoire tampon
 require_once 'gabarit.php'; // Inclut le gabarit
