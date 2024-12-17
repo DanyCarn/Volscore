@@ -78,6 +78,12 @@
 
             <button type="submit">Valider</button>
         </form>
+        <br>
+         <!-- Bouton pour revenir à la page d'accueil -->
+        <!-- Bouton de retour -->
+<div class="back-button">
+    <a href="index.php?action=teams">Retour à la Liste des Équipes</a>
+</div>
     </div>
 </body>
 </html>
