@@ -728,6 +728,14 @@ class VolscoreDB implements IVolscoreDb {
         return $stmt->fetchall();
     }
 
+    public static function getConnection()
+{
+    try {
+        return self::connexionDB();
+    } catch (PDOException $e) {
+        die("Erreur lors de la connexion à la base de données : " . $e->getMessage());
+    }
+}
 }
 
 
