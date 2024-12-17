@@ -5,7 +5,12 @@
  */
 class Team extends Model {
     public $id;     // team number
-    public $name;   // club
+    public $name;   // team name
+    public $city;   // city
+    public $abbreviation; // abbreviation (if applicable)
 }
 
 ?>
+
+
+

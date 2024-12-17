@@ -5,7 +5,7 @@ class VolscoreDB implements IVolscoreDb {
 
     public static function connexionDB()
     {
-        require '.credentials.php';
+        require 'credentials.php';
         $PDO = new PDO("mysql:host=$hostname; port=$portnumber; dbname=$database;", $username, $password);
         $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $PDO->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -707,7 +707,13 @@ class VolscoreDB implements IVolscoreDb {
         $query = "INSERT INTO bookings (player_id, point_id, severity) VALUES($playerid, ".$lastPoint->id.", $severity);";
         self::executeInsertQuery($query);
     }
-
+    public static function getAllTeams() {
+        $pdo = self::getPDO();
+        $query = 'SELECT id, name, city, abbreviation FROM teams';
+        $stmt = $pdo->query($query);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); // Renvoie un tableau associatif
+    }
+    
     public static function getBookings($team,$set) : array
     {
         $query = "SELECT pts.`timestamp` , p.`number`, m.last_name, severity ,  ".
@@ -737,7 +743,17 @@ class VolscoreDB implements IVolscoreDb {
         die("Erreur lors de la connexion à la base de données : " . $e->getMessage());
     }
 }
+
+public static function saveTeam($teamName){
+    $dbh = self::connexionDB();
+    $query = "INSERT INTO teams(name) VALUES (:teamName)";
+    $stmt = $dbh->prepare($query);
+    $stmt->bindValue(':teamName', $teamName);
+    $stmt->execute();
+    return true;
 }
+}
+
 
 
 ?>
