@@ -168,6 +168,7 @@ class VolscoreDB implements IVolscoreDb {
             $statement = $dbh->prepare("DELETE FROM teams WHERE id=$teamid"); // Prepare query
             $statement->execute(); // Executer la query
             $dbh = null;
+            echo '<script>alert("Equipe supprimée avec succès")</script>';
             return true;
         } catch (PDOException $e) {
             return false;
