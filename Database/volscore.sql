@@ -215,7 +215,7 @@ CREATE TABLE `teams` (
 --
 
 /*!40000 ALTER TABLE `teams` DISABLE KEYS */;
-INSERT INTO `teams` VALUES (2,'Ecublens'),(3,'Froideville'),(4,'Littoral'),(1,'LUC'),(5,'Lutry'),(6,'Yverdon'),(7,'kill me');
+INSERT INTO `teams` VALUES (2,'Ecublens'),(3,'Froideville'),(4,'Littoral'),(1,'LUC'),(5,'Lutry'),(6,'Yverdon'),(7,'kill me'),(8, 'suppression test');
 /*!40000 ALTER TABLE `teams` ENABLE KEYS */;
 
 --
