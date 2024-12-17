@@ -742,6 +742,15 @@ class VolscoreDB implements IVolscoreDb {
         die("Erreur lors de la connexion à la base de données : " . $e->getMessage());
     }
 }
+
+public static function saveTeam($teamName){
+    $dbh = self::connexionDB();
+    $query = "INSERT INTO teams(name) VALUES (:teamName)";
+    $stmt = $dbh->prepare($query);
+    $stmt->bindValue(':teamName', $teamName);
+    $stmt->execute();
+    return true;
+}
 }
 
 

@@ -66,15 +66,9 @@
 <body>
     <div class="form-container">
         <!-- Formulaire d'ajout -->
-        <form action="addTeams.php" method="post">
+        <form action="?action=save_team" method="post">
             <label for="team_name">Nom de l'Équipe :</label>
             <input type="text" id="team_name" name="team_name" required>
-
-            <label for="city_name">Nom de la Ville :</label>
-            <input type="text" id="city_name" name="city_name" required>
-
-            <label for="abbreviation">Abréviation :</label>
-            <input type="text" id="abbreviation" name="abbreviation" required maxlength="5">
 
             <button type="submit">Valider</button>
         </form>

@@ -229,5 +229,7 @@ interface IVolscoreDb {
      */
     public static function getBookings($team,$set) : array;
 
+    public static function saveTeam($teamName);
+
 #endregion
 }
