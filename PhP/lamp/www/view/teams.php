@@ -2,6 +2,13 @@
 $title = 'Equipes';
 
 ob_start();
+
+session_start();
+
+if(isset($_SESSION['deleteMessage'])){
+    echo $_SESSION['deleteMessage'];
+    $_SESSION['deleteMessage'] = NULL;
+}
 ?>
 
 <h1>Equipes</h1>

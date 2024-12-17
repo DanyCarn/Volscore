@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 /**
  * Display list of teams
  */
@@ -232,7 +234,9 @@ function executeUnitTests()
 
 function deleteteam($teamid)
 {
-    VolscoreDB::deleteTeam($teamid);
+    if(VolscoreDB::deleteTeam($teamid)){
+        $_SESSION['deleteMessage'] = '<script>alert("Equipe supprimée avec succès")</script>';
+    }
     header('Location: ?action=teams');
 }
 
